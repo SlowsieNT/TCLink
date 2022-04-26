@@ -1,0 +1,4 @@
+<?php
+class DBTbl_Test extends DBTBase { static $DBIndex = 0, $Name = "test", $Key = "id"; }
+
+?>
