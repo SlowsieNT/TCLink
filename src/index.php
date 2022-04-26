@@ -108,6 +108,8 @@ if ($vCurrentUser && isset($_GET["act"])) {
 	$vAct = $_GET["act"];
 	$vCUID = $vCurrentUser->id;
 	// vCSRFToken must match Session's token
+	if (!isset($_SESSION[SES_CSRFTOKEN]))
+		$_SESSION[SES_CSRFTOKEN] = DBTbl_Login::Hash(microtime(true));
 	if ($vCSRFToken != $_SESSION[SES_CSRFTOKEN])
 		exit;
 	if ("0" === $vAct) {

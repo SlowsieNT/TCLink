@@ -19,6 +19,7 @@ if (isset($_GET["act"], $_POST["a"], $_POST["b"], $_POST["c"], $_POST["d"], $_PO
 	else {
 		$_SESSION[SES_LOGIN] = $vLogin;
 		$_SESSION[SES_PASS] = $vPass;
+		$_SESSION[SES_CSRFTOKEN] = DBTbl_Login::Hash(microtime(true));
 		header("location: .");
 	}
 }
