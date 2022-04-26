@@ -13,13 +13,11 @@ var Chat = new function () {
 		Decrypt: function (aX) { return aX; },
 		EncryptBuffer: function (aBuffer, aFunc) {
 			var vUint8Arr = new Uint8Array(aBuffer);
-			for (var vI = 0, vKL = this.Key.length; vI < vUint8Arr.length; vI++)
-				vUint8Arr[vI] = vUint8Arr[vI] ^ this.Key[vI%vKL].charCodeAt();
+			// Do as needed...
 			aFunc(vUint8Arr);
 		}, DecryptBuffer: function (aBuffer, aFunc) {
 			var vUint8Arr = new Uint8Array(aBuffer);
-			for (var vI = 0, vKL = this.Key.length; vI < vUint8Arr.length; vI++)
-				vUint8Arr[vI] = vUint8Arr[vI] ^ this.Key[vI%vKL].charCodeAt();
+			// Do as needed...
 			aFunc(vUint8Arr);
 		}
 	};
